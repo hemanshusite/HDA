@@ -27,22 +27,22 @@ app.use(express.urlencoded());
 app.set('view engine','pug')
 app.set('views', path.join(__dirname,'views'));
 
-app.get('/',(req,res)=>{
+app.get('/HDA/',(req,res)=>{
     res.status(200).render('home.pug')
 });
-app.get('/about',(req,res)=>{
+app.get('/HDA/about',(req,res)=>{
     res.status(200).render('about.pug')
 });
-app.get('/service',(req,res)=>{
+app.get('/HDA/service',(req,res)=>{
     res.status(200).render('service.pug')
 });
-app.get('/information',(req,res)=>{
+app.get('/HDA/information',(req,res)=>{
     res.status(200).render('information.pug')
 });
-app.get('/contact',(req,res)=>{
+app.get('/HDA/contact',(req,res)=>{
     res.status(200).render('contact.pug')
 });
-app.post('/contact',(req,res)=>{
+app.post('/HDA/contact',(req,res)=>{
     var mydata = new Students(req.body);
     mydata.save().then(()=>{
         res.send(`<h1 style="color:green;", style="Font-size:70px;">This information has been saved in (HDA) Database</h1>`)
@@ -52,7 +52,7 @@ app.post('/contact',(req,res)=>{
     
 });
 
-// app.post('/contact',(req,res)=>{
+// app.post('/HDA/contact',(req,res)=>{
 //     name=req.body.name
 //     age=req.body.age
 //     gender=req.body.gender
